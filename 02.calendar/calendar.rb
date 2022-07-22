@@ -21,12 +21,10 @@ day = today.day
 
 if (days[:y].to_i) == 0
   year = today.year
-else year = (days[:y].to_i)
 end
 
 if (days[:m].to_i) == 0
   month = today.month
-else month = (days[:m].to_i)
 end
 
 
@@ -62,27 +60,15 @@ days_and_wdays = Hash[*ary.flatten]
 
 # 1日の前のスペースを表示
 first_day.wday.times do
-  print (' ')
-  print (' ')
-  print (' ')
+  print ' ' * 3
 end
 
 
 # 日付を表示
 days_and_wdays.each do |key, value|
-  if key < 10 && value == "6" 
-    print (' ')
-    print (' ')
-    print "#{key}\n"
-  elsif key < 10 && value != "6"
-    print (' ')
-    print (' ')
-    print key
-  elsif key >= 10 && value == "6"
-    print (' ')
-    print "#{key}\n"
-  elsif key >= 10 && value != "6"
-    print (' ')
-    print key
-  end
+if key < 10
+  print (' ')
+end
+print "#{key} "
+print "\n" if value == "6"
 end
