@@ -21,10 +21,14 @@ day = today.day
 
 if (days[:y].to_i) == 0
   year = today.year
+else
+  year = days[:y].to_i
 end
 
 if (days[:m].to_i) == 0
   month = today.month
+else
+  month = days[:m].to_i
 end
 
 
